@@ -25,4 +25,15 @@ PRODUCT_PROPERTY_OVERRIDES += \
     rild.libpath=/vendor/lib/libsec-ril.so \
     rild.libargs=-d /dev/ttyS0 \
     ro.telephony.default_network=9 \
-    ro.telephony.mms_data_profile=5
+    ro.telephony.mms_data_profile=5 \
+    ro.telephony.ril_class=SlteRIL \
+    ro.ril.telephony.mqanelements=6
+
+# A12
+# BPF
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kernel.ebpf.supported=false
+
+# System
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.sys.binary_xml=false

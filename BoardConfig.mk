@@ -40,7 +40,7 @@ TARGET_NEEDS_NETD_DIRECT_CONNECT_RULE := true
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 8388608
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 10485760
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 12485760
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 2202009600
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 12629049344
 BOARD_CACHEIMAGE_PARTITION_SIZE := 209715200
@@ -53,7 +53,8 @@ BOARD_MODEM_TYPE := xmm7260
 
 # Shims
 TARGET_LD_SHIM_LIBS += \
-    /vendor/bin/gpsd|/vendor/lib/libshim_gps.so
+    /vendor/bin/gpsd|/vendor/lib/libshim_gpsd.so \
+    /vendor/lib/libsec-ril.so|libcutils_shim.so
 
 # Inherit from the proprietary version
 -include vendor/samsung/chagalllte/BoardConfigVendor.mk
